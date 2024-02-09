@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { getDate, statusButton, capitalize } from "../components/Utilities";
 import ValidationModal from "../components/ValidationModal";
 import { Context } from "../App";
-import axios from "axios";
 import EditInvoiceCanvas from "../components/EditInvoiceCanvas";
+import http from "../http";
 
 // interface Props {
 //   modalTitle: string;
@@ -32,7 +32,7 @@ function InvoiceDetails() {
 
   useEffect(() => {
     if (invoice === undefined) {
-      axios
+      http
         .get("/api/invoices/getInvoiceItems/" + id)
         .then((response) => {
           setInvoice(response.data.invoice[0]);
@@ -65,7 +65,7 @@ function InvoiceDetails() {
 
   const handleSubmit = async () => {
     if (modalButton === "markButton") {
-      await axios
+      await http
         .put("/api/invoices/markPaid/" + id)
         .then((response) => {
           console.log(response.data);
@@ -73,7 +73,7 @@ function InvoiceDetails() {
         .catch((error) => console.log(`Error: ${error}`));
       window.location.reload();
     } else if (modalButton === "deleteButton") {
-      await axios
+      await http
         .delete("/api/invoices/deleteInvoice/" + id)
         .then((response) => {
           console.log(response.data);

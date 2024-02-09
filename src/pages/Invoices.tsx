@@ -6,8 +6,8 @@ import {
   filterLength,
 } from "../components/Utilities";
 import InvoiceCanvas from "../components/InvoiceCanvas";
-import axios from "axios";
 import Empty from "../assets/images/illustration-empty.svg";
+import http from "../http";
 
 function Invoices() {
   const [filterArg, setFilterArg] = useState("");
@@ -16,7 +16,7 @@ function Invoices() {
 
   useEffect(() => {
     if (invoices.length === 0) {
-      axios
+      http
         .get("/api/invoices/getInvoices")
         .then((response) => {
           setInvoices(response.data.invoices.reverse());

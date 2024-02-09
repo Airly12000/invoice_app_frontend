@@ -7,7 +7,7 @@ import {
   validateItemName,
   createInvoiceObject,
 } from "./Utilities";
-import axios from "axios";
+import http from "../http";
 
 interface Props {
   inv: any;
@@ -158,7 +158,7 @@ function EditInvoiceCanvas({ inv }: Props) {
     });
     console.log(finalInvoice);
     if (validateInvoice(finalInvoice) && validateItems(finalInvoice.items)) {
-      await axios
+      await http
         .put("/api/invoices/updateInvoice/" + inv.id, finalInvoice)
         .then((response) => console.log(response.data))
         .catch((error) => console.log(`error : ${error}`));

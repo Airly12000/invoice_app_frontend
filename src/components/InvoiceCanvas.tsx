@@ -8,7 +8,7 @@ import {
   createInvoiceObject,
   createID,
 } from "./Utilities";
-import axios from "axios";
+import http from "../http";
 
 const today = new Date();
 
@@ -157,7 +157,7 @@ function InvoiceCanvas() {
     });
     console.log(finalInvoice);
     if (validateInvoice(finalInvoice) && validateItems(finalInvoice.items)) {
-      await axios
+      await http
         .post("/api/invoices/post", finalInvoice)
         .then((response) => console.log(response.data))
         .catch((error) => console.log(`error : ${error}`));
@@ -180,7 +180,7 @@ function InvoiceCanvas() {
       total,
     });
     console.log(finalInvoice);
-    await axios
+    await http
       .post("/api/invoices/post", finalInvoice)
       .then((response) => console.log(response.data))
       .catch((error) => console.log(`error : ${error}`));
