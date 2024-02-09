@@ -1,38 +1,770 @@
-.App {
-  text-align: center;
+#sidebar {
+  z-index: 1051;
+  height: 73px;
+  width: 100%;
+  border-radius: 0 0 0 0;
+  background-color: hsl(233, 31%, 17%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logo {
+  width: 78px;
+  height: 73px;
+  margin-left: -12px;
+  border-radius: 0 20px 20px 0;
+  background-color: rgb(124, 93, 250);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#logo .c1 {
+  background-color: rgb(124, 93, 250);
+  border-radius: 0 20px 0 0;
+}
+
+#logo .c2 {
+  background-color: rgb(146, 119, 255);
+  border-radius: 20px 0 20px 0;
+}
+
+#avatar {
+  height: 32px;
+  width: 32px;
+}
+
+@media (min-width: 992px) {
+  #sidebar {
+    height: 100vh;
+    width: 103px;
+    border-radius: 0 20px 20px 0;
+  }
+
+  #logo {
+    min-width: 103px;
+    height: 103px;
+    margin-left: -12px;
+  }
+
+  #avatar {
+    height: 40px;
+    width: 40px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.w-100 {
+  width: 100%;
+}
+
+.newB {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: auto auto;
+  height: 48px;
+  background-color: rgb(124, 93, 250);
+  color: white;
+  border: transparent;
+  transition: background-color 0.75s ease;
+}
+
+.newB:hover {
+  background-color: rgb(146, 119, 255);
+}
+
+.newB .plus {
+  background-color: white;
+  color: rgb(124, 93, 250);
+  height: 30px;
+  width: 30px;
+  font-size: 1.5rem;
+}
+
+.newB .text {
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.f-w {
+  font-weight: bold;
+}
+
+.f-n {
+  font-weight: normal;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+/* .card-hover {
+  transition: border 0.75s ease;
+}
+
+.card-hover:hover {
+  border: solid 1px rgb(118, 79, 224);
+} */
+
+#invoice {
+  text-decoration: none;
+}
+
+#invoiceCard {
+  border-color: transparent;
+  transition: border 0.75s ease;
+  height: 150px;
+}
+
+#invoiceCard:hover {
+  border: solid 1px rgb(118, 79, 224);
+}
+
+@media (min-width: 768px) {
+  #invoiceCard {
+    height: 75px;
+  }
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.f-w-900 {
+  font-weight: 900;
+}
+
+/* .card {
+	box-shadow: 0 3px 8px #dfe3fa;
+} */
+
+.pendingButton {
+  color: hsl(34, 100%, 50%);
+  background-color: hsla(34, 100%, 50%, 5.71%);
+  width: 85px;
+  height: 38px;
+}
+
+.paidButton {
+  background-color: hsla(160, 67%, 52%, 5.71%);
+  color: hsl(160, 67%, 52%);
+  width: 85px;
+  height: 38px;
+}
+
+.draftButton {
+  background-color: hsla(231, 20%, 27%, 5.71%);
+  color: hsl(231, 20%, 27%);
+  width: 85px;
+  height: 38px;
+}
+
+.pId {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+}
+
+.pName {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+}
+
+.pPrice {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+}
+
+.pStatus {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .pId {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .pName {
+    position: relative;
+    top: auto;
+    right: 0;
+  }
+
+  .pPrice {
+    position: relative;
+    bottom: auto;
+    left: auto;
+  }
+
+  .pStatus {
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+}
+
+.goBack {
+  text-decoration: none;
+  color: black;
+  transition: color 0.75s ease;
+}
+
+.goBack:hover {
+  color: rgb(146, 119, 255);
+}
+
+.goBack .gb-i {
+  transition: margin-left 0.5s ease;
+}
+
+.goBack:hover .gb-i {
+  margin-left: -3px;
+}
+
+#items {
+  box-shadow: none;
+  width: 100%;
+}
+
+#divAmtDue {
+  background-color: hsl(231, 20%, 27%);
+}
+
+.col-white {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.col-black {
+  color: black;
 }
 
-@keyframes App-logo-spin {
+#itemTable {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.vh-90 {
+  min-height: 90vh;
+}
+
+#offcanvasExample {
+  left: 0;
+  top: 74px;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+}
+
+#canvasFooter {
+  width: 100vw;
+  left: 0;
+  position: absolute;
+  border-radius: 0;
+}
+
+.mb-16 {
+  margin-bottom: 16rex;
+}
+
+@media (min-width: 992px) {
+  #offcanvasExample {
+    left: 90px;
+    top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #offcanvasExample {
+    width: 600px;
+    border-radius: 0 25px 25px 0;
+  }
+
+  #canvasFooter {
+    width: 600px;
+    border-radius: 0 20px 20px 0;
+  }
+}
+
+input::placeholder {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#senderCity,
+#senderStreetAddress,
+#senderPostCode,
+#senderCountry,
+#clientName,
+#clientEmail,
+#clientCity,
+#clientStreetAddress,
+#clientPostCode,
+#clientCountry,
+#invoiceDate,
+#paymentTerms,
+#projectDescription,
+#itemName,
+#itemQty,
+#itemPrice,
+#itemTotal {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: hsl(233, 31%, 17%);
+}
+
+.priceFont {
+  font-weight: 700;
+  font-size: 1rem;
+  color: hsl(231, 28%, 7%);
+}
+
+.bg-footer {
+  background-color: white;
+}
+
+#addItem {
+  background-color: hsl(231, 67%, 99%);
+  color: hsl(231, 20%, 61%);
+  font-size: 0.75rem;
+  padding: 17px 24px 16px 24px;
+}
+
+#addItem:hover {
+  background-color: hsl(231, 73%, 93%);
+}
+
+#deleteButton {
+  background-color: hsl(0, 80%, 63%);
+  color: white;
+  font-size: 0.75rem;
+  padding: 17px 24px 16px 24px;
+}
+
+#deleteButton:hover {
+  background-color: hsl(0, 100%, 80%);
+}
+
+#editButton {
+  background-color: hsl(231, 67%, 99%);
+  color: hsl(231, 20%, 61%);
+  font-size: 0.75rem;
+  padding: 17px 24px 16px 24px;
+}
+
+#editButton:hover {
+  background-color: hsl(231, 73%, 93%);
+}
+
+#markButton {
+  background-color: hsl(252, 94%, 67%);
+  color: white;
+  font-size: 0.75rem;
+  padding: 17px 24px 16px 24px;
+}
+
+#markButton:hover {
+  background-color: hsl(252, 100%, 73%);
+}
+
+#saveDraft {
+  background-color: hsl(233, 30%, 21%);
+  color: hsl(231, 20%, 61%);
+  font-size: 0.75rem;
+  padding: 17px 24px 16px 24px;
+}
+
+#saveDraft:hover {
+  background-color: hsl(228, 29%, 7%);
+}
+
+.text-color {
+  color: hsl(231, 20%, 61%);
+}
+
+.col-purple {
+  color: hsl(252, 94%, 67%);
+}
+
+#sun-moon {
+  z-index: 1052;
+}
+
+#sun-moon:hover {
+  cursor: pointer;
+}
+
+#sun-moon:hover img {
+  color: white;
+}
+
+#noInvoice {
+  height: 200px;
+  width: 250px;
+}
+
+#NotFound {
+  height: 320px;
+  width: 320px;
+}
+
+.w-60 {
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  #NotFound {
+    height: 380px;
+    width: 380px;
+  }
+  .w-60 {
+    width: 60%;
+  }
+}
+
+.fs-22 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#senderCity,
+#senderStreetAddress,
+#senderPostCode,
+#senderCountry,
+#clientName,
+#clientEmail,
+#clientCity,
+#clientStreetAddress,
+#clientPostCode,
+#clientCountry,
+#invoiceDate,
+#paymentTerms,
+#projectDescription,
+#itemName,
+#itemQty,
+#itemPrice,
+#itemTotal {
+  box-shadow: none;
+  transform: border 1s ease;
+}
+
+#senderCity:focus,
+#senderStreetAddress:focus,
+#senderPostCode:focus,
+#senderCountry:focus,
+#clientName:focus,
+#clientEmail:focus,
+#clientCity:focus,
+#clientStreetAddress:focus,
+#clientPostCode:focus,
+#clientCountry:focus,
+#invoiceDate:focus,
+#paymentTerms:focus,
+#projectDescription:focus,
+#itemName:focus,
+#itemQty:focus,
+#itemPrice:focus,
+#itemTotal:focus {
+  border: solid 1px rgb(118, 79, 224);
+}
+
+#paymentTerms option {
+  font-size: 13px;
+  font-weight: bold;
+  gap: 10px;
+}
+
+#inputs {
+  padding: 0 2rem 0 2rem;
+}
+
+/* width */
+#inputs::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+#inputs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+#inputs::-webkit-scrollbar-thumb {
+  background: hsl(231, 67%, 93%);
+  border-radius: 5px;
+}
+
+#myModal {
+  border: transparent;
+}
+
+.variant {
+  margin-top: -15px;
+}
+
+.variant1 {
+  margin-bottom: -20px;
+}
+
+.red {
+  color: hsl(0, 80%, 63%);
+  font-size: 9.5px;
+  align-self: center;
+}
+
+.border-red {
+  border: hsl(0, 80%, 63%);
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  /* position: relative; */
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 2s;
+  animation-name: animatebottom;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes animatebottom {
   from {
-    transform: rotate(0deg);
+    bottom: -100px;
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.animate-other {
+  /* position: relative; */
+  -webkit-animation-name: animateOther;
+  -webkit-animation-duration: 2s;
+  animation-name: animateOther;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes animateOther {
+  from {
+    z-index: 0;
+    opacity: 0;
+  }
+  to {
+    z-index: 1000;
+    opacity: 1;
+  }
+}
+
+@keyframes animateOther {
+  from {
+    z-index: 0;
+    opacity: 0;
+  }
+  to {
+    z-index: 1000;
+    opacity: 1;
+  }
+}
+
+body[theme="light"] {
+  #mainBody {
+    background-color: #f8f8f8;
+  }
+
+  .col-white {
+    color: white;
+  }
+
+  .col-black {
+    color: black;
+  }
+
+  #invoiceCard {
+    background-color: #fff;
+    box-shadow: 0 3px 8px #dfe3fa;
+  }
+
+  #topDetails {
+    background-color: #fff;
+  }
+
+  #mainDetails {
+    background-color: #fff;
+  }
+
+  #items {
+    background-color: hsl(231, 67%, 99%);
+  }
+
+  #divAmntDue {
+    background-color: hsl(231, 20%, 27%);
+  }
+
+  #foot {
+    background-color: #fff;
+  }
+
+  #offcanvasExample {
+    background-color: #fff;
+  }
+
+  #canvasFooter {
+    background-color: #fff;
+  }
+
+  #senderCity,
+  #senderStreetAddress,
+  #senderPostCode,
+  #senderCountry,
+  #clientName,
+  #clientEmail,
+  #clientCity,
+  #clientStreetAddress,
+  #clientPostCode,
+  #clientCountry,
+  #invoiceDate,
+  #paymentTerms,
+  #projectDescription,
+  #itemName,
+  #itemQty,
+  #itemPrice,
+  #itemTotal {
+    background-color: #fff;
+    border: solid 1px hsl(231, 20%, 61%);
+    color: black;
+  }
+
+  #inputs::-webkit-scrollbar-thumb {
+    background: hsl(231, 67%, 93%);
+  }
+
+  #myModal {
+    background-color: white;
+  }
+}
+
+body[theme="dark"] {
+  #mainBody {
+    background-color: hsl(231, 30%, 11%);
+  }
+
+  .col-white {
+    color: black;
+  }
+
+  .col-black {
+    color: white;
+  }
+
+  #invoiceCard {
+    background-color: hsl(233, 31%, 17%);
+    box-shadow: none;
+  }
+
+  #topDetails {
+    background-color: hsl(233, 31%, 17%);
+  }
+
+  #mainDetails {
+    background-color: hsl(233, 31%, 17%);
+  }
+
+  #items {
+    background-color: hsl(233, 30%, 21%);
+  }
+
+  #divAmtDue {
+    background-color: hsl(228, 29%, 7%);
+  }
+
+  #foot {
+    background-color: hsl(233, 31%, 17%);
+  }
+
+  #offcanvasExample {
+    background-color: hsl(231, 30%, 11%);
+  }
+
+  #canvasFooter {
+    background-color: hsl(231, 30%, 11%);
+  }
+
+  #senderCity,
+  #senderStreetAddress,
+  #senderPostCode,
+  #senderCountry,
+  #clientName,
+  #clientEmail,
+  #clientCity,
+  #clientStreetAddress,
+  #clientPostCode,
+  #clientCountry,
+  #invoiceDate,
+  #paymentTerms,
+  #projectDescription,
+  #itemName,
+  #itemQty,
+  #itemPrice,
+  #itemTotal {
+    background-color: hsl(233, 31%, 17%);
+    color: white;
+    border: transparent;
+  }
+
+  #projectDescription::placeholder,
+  #clientEmail::placeholder {
+    color: hsl(231, 20%, 61%);
+  }
+
+  #inputs::-webkit-scrollbar-thumb {
+    background: hsl(233, 31%, 17%);
+  }
+
+  #saveDraft {
+    color: white;
+  }
+
+  #saveDraft:hover {
+    background-color: hsl(228, 31%, 17%);
+  }
+
+  #editButton {
+    background-color: hsl(233, 30%, 21%);
+    color: white;
+  }
+
+  #editButton:hover {
+    background-color: hsl(228, 31%, 17%);
+  }
+
+  #variant #editButton:hover {
+    background-color: hsl(233, 30%, 21%);
+  }
+
+  .variant #editButton:hover {
+    background-color: hsl(233, 30%, 21%);
+  }
+
+  .draftButton {
+    background-color: hsla(231, 75%, 93%, 5.71%);
+    color: hsl(231, 75%, 93%);
+  }
+
+  #myModal {
+    background-color: hsl(233, 31%, 17%);
+  }
+
+  #dropdown {
+    background-color: hsl(233, 31%, 17%);
+    color: white;
   }
 }
